@@ -17,7 +17,7 @@ public class UI_Controller : MonoBehaviour
     void Update()
     {
         //Getting health from the player
-        int health = gameObject.GetComponent<Player_Controller>().health;
+        float health = gameObject.GetComponent<Player_Controller>().health;
         healthText.text = "Health: " + health;
     }
 }
