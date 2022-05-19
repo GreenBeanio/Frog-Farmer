@@ -70,9 +70,8 @@ public class Player_Controller : MonoBehaviour
             //moves in fixed direcitons
         //Body.MovePosition(Body.position + (movement * movement_speed * Time.fixedDeltaTime));
             //moves where pointing
-        Vector3 testdir = new Vector3(movement.x, movement.y, 0);
-        transform.Translate(testdir.normalized * Time.deltaTime * movement_speed);
-        
+        Vector3 moveDir = new Vector3(movement.x, movement.y, 0);
+        transform.Translate(moveDir.normalized * Time.deltaTime * movement_speed);
         //Checking damage status
         if (damaged==true)
         {
@@ -96,6 +95,7 @@ public class Player_Controller : MonoBehaviour
         //Point towards the pointer (this shit busted if you move the camera with the player)
         Vector2 lookDirection = playerMousePosition - Body.position;
         float lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        
         Body.rotation = lookAngle;
 
     }
